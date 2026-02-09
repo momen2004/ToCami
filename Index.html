@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hacker Warning</title>
+  <style>
+    body {
+      background: #081414;
+      color: #00ff41;
+      font-family: 'Courier New', Courier, monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      overflow: hidden;
+      position: relative;
+    }
+    .scan-lines {
+      pointer-events: none;
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      z-index: 10;
+      background: repeating-linear-gradient(
+        to bottom,
+        rgba(0,255,50,0.06) 0,
+        rgba(0,255,50,0.10) 2px,
+        transparent 4px,
+        transparent 10px
+      );
+      mix-blend-mode: screen;
+    }
+    h1 {
+      color: #00ff41;
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      text-shadow:
+        0 0 5px #00ff41,
+        0 0 20px #00ff41aa,
+        0 0 2px #008f11;
+      letter-spacing: 2px;
+      animation: glitch 1.2s infinite linear alternate-reverse;
+    }
+    @keyframes glitch {
+      0% { text-shadow: 0 0 5px #00ff41, 0 0 20px #00ff41aa, 2px 2px 2px #008f11;}
+      25% { text-shadow: 1px 0 10px #00ff41, 0 0 30px #00ff41aa, -2px 2px 4px #008f11;}
+      50% { text-shadow: -1px 0 6px #00ff41, 0 0 10px #00ff41aa, 2px -1px 2px #008f11;}
+      75% { text-shadow: 2px 1px 8px #00ff41, 0 0 25px #00ff41aa, -2px 2px 0px #008f11;}
+      100% { text-shadow: 0 0 5px #00ff41, 0 0 20px #00ff41aa, 0px 0px 2px #008f11;}
+    }
+    .hacker-paragraph {
+      background: rgba(0,24,0,0.25);
+      padding: 2rem 2.5rem;
+      border: 1.5px solid #00ff41;
+      border-radius: 8px;
+      text-align: center;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 0 20px #007a2a77;
+      font-size: 1.35rem;
+      max-width: 420px;
+      text-shadow: 0 0 3px #00ff41;
+      letter-spacing: 1px;
+    }
+    .button-row {
+      display: flex;
+      gap: 2.5em;
+      justify-content: center;
+    }
+    .hacker-btn {
+      padding: 0.8em 2.2em;
+      background: transparent;
+      border: 2px solid #00ff41;
+      border-radius: 6px;
+      color: #00ff41;
+      font-size: 1.2rem;
+      font-family: inherit;
+      cursor: pointer;
+      box-shadow: 0 0 12px #00ff4177;
+      transition: background 0.13s, color 0.12s, box-shadow 0.14s, transform 0.09s;
+      text-shadow: 0 0 5px #00ff41aa;
+      outline: none;
+      letter-spacing: 1px;
+      position: relative;
+      z-index: 2;
+    }
+    .hacker-btn:hover {
+      background: #003a13cc;
+      color: #afffaf;
+      box-shadow: 0 0 25px #00ff41cc, 0 0 2px #00ff4177;
+      transform: scale(1.06);
+    }
+    /* Some random terminal output for vibe */
+    .console-output {
+      position: absolute;
+      top: 8%;
+      left: 2vw;
+      font-size: 0.99rem;
+      opacity: 0.26;
+      color: #00ff41;
+      font-family: 'Fira Mono', 'Consolas', monospace;
+      pointer-events: none;
+      user-select: none;
+      width: 60vw;
+      white-space: pre-line;
+      line-height: 1.18em;
+    }
+  </style>
+</head>
+<body>
+  <div class="scan-lines"></div>
+  <div class="console-output">
+    <span>&gt; Accessing secure shell... OK<br>
+&gt; Tracing route... 104.98.11.0 ... 41.81.12.174 ... complete<br>
+&gt; Downloading payload [███████████████...........]<br>
+&gt; Injecting code ... done<br>
+&gt; Attempting system breach...<br>
+&gt; WARNING: privilege escalation detected<br>
+&gt; [AUTH] root: access denied<br>
+&gt; ---<br>
+    </span>
+  </div>
+  <h1>HACKER ALERT</h1>
+  <div class="hacker-paragraph">
+    Do you want to be <b>hacked</b>?<br><br>
+    Choose wisely<span style="animation: blink 1.2s infinite step-end;">_</span>
+  </div>
+  <div class="button-row">
+    <button class="hacker-btn" onclick="alert('Are you sure? 😈')">Yes</button>
+    <button class="hacker-btn" onclick="window.location.href='Cover.html'">No</button>
+  </div>
+  <script>
+    // Blinking cursor effect for underscore
+    document.querySelectorAll('.hacker-paragraph span').forEach(span => {
+      span.animate([
+        { opacity: 1 },
+        { opacity: 0.2 },
+        { opacity: 1 }
+      ], {
+        duration: 1200,
+        iterations: Infinity
+      });
+    });
+  </script>
+</body>
+</html>

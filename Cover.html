@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kind request</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+    <div class="valentine-container" id="valentineContainer">
+        <h1>Dear Cami, Would you be my valentine?</h1>
+        <p class="subtitle">Choose wisely... 💘</p>
+
+        <div class="buttons">
+            <button class="btn yes-btn" id="yesBtn">Yes</button>
+            <button class="btn no-btn" id="noBtn">
+                <span class="label-no">No</span>
+                <span class="label-yes">Yes</span>
+            </button>
+        </div>
+        <p class="shy-text hidden" id="shyText">HEHE, you can't choose no 😁</p>
+    </div>
+
+    <!-- Celebration Section -->
+    <div class="celebration-section hidden" id="celebrationSection">
+        <div class="yay-text" id="yayText">Siii Grazie 💖😁</div>
+        <div class="flower-container" id="flowerContainer"></div>
+    </div>
+
+    <!-- Movie Selection Section -->
+    <div class="movie-section hidden" id="movieSection">
+        <h2>Let's pick a movie to watch together! 💕</h2>
+        <p class="movie-subtitle">Choose your favorite movie (Note: It's not just a movie, it's a memory :)</p>
+        <div class="movie-list" id="movieList">
+            <div class="movie-card" data-movie="The Notebook">
+                <div class="movie-number">1</div>
+                <div class="movie-title">The Notebook</div>
+            </div>
+            <div class="movie-card" data-movie="Pride and Prejudice">
+                <div class="movie-number">2</div>
+                <div class="movie-title">Pride and Prejudice</div>
+            </div>
+            <div class="movie-card" data-movie="La La Land">
+                <div class="movie-number">3</div>
+                <div class="movie-title">La La Land</div>
+            </div>
+            <div class="movie-card" data-movie="The Princess Bride">
+                <div class="movie-number">4</div>
+                <div class="movie-title">The Princess Bride</div>
+            </div>
+            <div class="movie-card" data-movie="10 Things I Hate About You">
+                <div class="movie-number">5</div>
+                <div class="movie-title">10 Things I Hate About You</div>
+            </div>
+            <div class="movie-card" data-movie="Crazy Rich Asians">
+                <div class="movie-number">6</div>
+                <div class="movie-title">Crazy Rich Asians</div>
+            </div>
+            <div class="movie-card" data-movie="Before Sunrise">
+                <div class="movie-number">7</div>
+                <div class="movie-title">Before Sunrise</div>
+            </div>
+            <div class="movie-card" data-movie="The Fault in Our Stars">
+                <div class="movie-number">8</div>
+                <div class="movie-title">The Fault in Our Stars</div>
+            </div>
+            <div class="movie-card" data-movie="500 Days of Summer">
+                <div class="movie-number">9</div>
+                <div class="movie-title">500 Days of Summer</div>
+            </div>
+            <div class="movie-card" data-movie="Your Name">
+                <div class="movie-number">10</div>
+                <div class="movie-title">Or Just Say What You Want to Watch 😁</div>
+            </div>
+        </div>
+        <div class="custom-movie-input hidden" id="customMovieInput">
+            <h3>Great idea! 💡</h3>
+            <p>What movie would you like to watch instead?</p>
+            <div class="input-container">
+                <input type="text" id="customMovieText" placeholder="Enter movie name..." class="movie-input">
+                <button class="btn submit-movie-btn" id="submitMovieBtn">Submit</button>
+            </div>
+        </div>
+        <div class="selected-movie hidden" id="selectedMovie">
+            <h3>What a great choice! 🎬</h3>
+            <p>You selected: <span id="selectedMovieName"></span></p>
+            <p class="enjoy-text">Enjoy your movie night! 💕🍿</p>
+        </div>
+        <div class="time-picker-section hidden" id="timePickerSection">
+            <h3>What time should we watch it? ⏰</h3>
+            <p class="time-subtitle">Pick a time that works for both of us (You're choosing in italy's time) </p>
+            <div class="time-input-container">
+                <input type="time" id="movieTime" class="time-input" value="">
+                <button class="btn confirm-time-btn" id="confirmTimeBtn">Confirm Time</button>
+            </div>
+            <div class="final-message hidden" id="finalMessage">
+                <h3>Perfect! 🎉</h3>
+                <p>Movie: <span id="finalMovieName"></span></p>
+                <p>Time: <span id="finalTime"></span></p>
+                <p class="enjoy-text">See you then! 💕🍿✨</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
